@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter number of elements in the array: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Array size must be greater than 0.\n");
+        return 1;
+    }
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int maxLength = 1; 
+    int currentLength = 1;
+    for (int i = 1; i < n; i++) {
+        if ((arr[i] % 2) != (arr[i - 1] % 2)) {
+            currentLength++; 
+        } else {
+            if (currentLength > maxLength) {
+                maxLength = currentLength;
+            }
+            currentLength = 1; 
+    }
+    if (currentLength > maxLength) {
+        maxLength = currentLength;
+    }
+    printf("Length of the longest alternating odd-even subarray: %d\n", maxLength);
+
+    return 0;
+}
+}
