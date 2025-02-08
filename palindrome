@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_LENGTH 100 
+int main() {
+    char str[MAX_LENGTH]; 
+    int i, length;
+    printf("Enter a string: ");
+    fgets(str, MAX_LENGTH, stdin); 
+    length = strlen(str);
+    if (str[length - 1] == '\n') {
+        str[length - 1] = '\0'; 
+    }
+    length = strlen(str); 
+    for (i = 0; i < length / 2; i++) {
+        if (str[i] != str[length - i - 1]) {
+            printf("The string is not a palindrome.\n");
+            return 0; 
+        }
+    }
+    printf("The string is a palindrome.\n");
+    return 0;
+}
