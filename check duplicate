@@ -1,0 +1,21 @@
+#include<stdio.h>
+int existsInArray(int arr[],int size, int newEntry){
+    for(int i=0;i<size;i++){
+        if(arr[i]==newEntry)
+        return i;
+    }
+    return -1;
+}
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int newEntry;
+    printf("Enter a new entry to check: ");
+    scanf("%d", &newEntry);
+    if (existsInArray(arr, size, newEntry)) {
+        printf("The entry %d is a duplicate element in the array.\n", newEntry);
+    } else {
+        printf("The entry %d does not exist in the array.\n", newEntry);
+    }
+    return 0;
+}
