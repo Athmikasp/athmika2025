@@ -1,18 +1,20 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 int main() {
 
-    std::vector<int> vec = {10, 20, 30, 40, 50};
+   vector<int> vec = {10, 20, 30, 40, 50};
     size_t size = vec.size();
     size_t capacity = vec.capacity();
-    std::cout << "Vector elements: ";
-    for (const int& value : vec) {
-        std::cout << value << " ";
+    cout << "Vector elements: ";
+    for (int value : vec) {
+        cout << value << " ";
     }
-    std::cout << std::endl;
-    std::cout << "Size of vector: " << size << std::endl;
-    std::cout << "Capacity of vector: " << capacity << std::endl;
+   cout <<endl;
+   cout << "Size of vector: " << size << endl;
+   cout << "Capacity of vector: " << capacity << endl;
 
     return 0;
 }
