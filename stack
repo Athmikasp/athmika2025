@@ -11,9 +11,9 @@ int main() {
    s.push(30);
    s.push(40);
    s.push(50);
-    cout << "top elements:"<< s.top();
-    s.pop();
-    
-    cout << "top elements:"<< s.top();
+     while(!s.empty()){
+       cout<<s.top()<<" ";
+       s.pop();
+   
     return 0;
 }
