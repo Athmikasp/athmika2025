@@ -1,0 +1,31 @@
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+string removeConsecutiveDuplicates(const string& str) {
+    stack<char> s;
+
+    for (char ch : str) {
+           if (!s.empty() && s.top() == ch) {
+            s.pop(); 
+        } else {
+            s.push(ch); 
+        }
+    }
+    string result;
+    while (!s.empty()) {
+        result = s.top() + result; 
+        s.pop();
+    }
+
+    return result;
+}
+
+int main() {
+    string input = "aabbccdde";
+    string output = removeConsecutiveDuplicates(input);
+    cout << "Output: \"" << output << "\"" << endl; // Output: "e"
+    return 0;
+}
